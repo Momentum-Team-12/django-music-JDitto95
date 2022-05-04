@@ -1,0 +1,14 @@
+models.py
+
+Album_info
+    -artist
+    -title
+    -created_at
+
+-views
+-`/albums/new` 
+    | POST | create a new album
+-templates
+
+-URL's
+
