@@ -7,3 +7,5 @@ class Album(models.Model):
     # image = models.FilePathField(path="/img")
     created_at = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return self.title
