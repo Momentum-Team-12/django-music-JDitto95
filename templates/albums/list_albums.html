@@ -7,6 +7,7 @@
 {% for album in albums %}
 <h2>{{album.title}}</h2>
 <p>{{album.artist}}</h1>
-    
+    <a href="{% url 'delete_album' album.pk %}">delete</a> 
+    <a href="{% url 'edit_album' album.pk %}">Edit</a>  
 {% endfor %}
 {% endblock %}
