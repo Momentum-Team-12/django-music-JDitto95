@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Album</h1>
+
+<div>
+  <form action="{% url 'edit_album' pk=album.pk %}" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to Edit {{ album.title }}?</p>
+    <div>
+      <button type="submit">EDIT Album</button><br />
+      <a href="{% url 'list_albums' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
