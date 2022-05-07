@@ -4,13 +4,17 @@
 <h1>Edit Album</h1>
 
 <div>
-  <form action="{% url 'edit_album' pk=album.pk %}" method="POST">
+<form action="{% url 'edit_album' pk=album.pk %}" method="POST">
     {% csrf_token %}
+    {{form.as_p}}
     <p>Are you sure you want to Edit {{ album.title }}?</p>
     <div>
-      <button type="submit">EDIT Album</button><br />
-      <a href="{% url 'list_albums' %}">Cancel</a>
+        <h2>{{ album.title }}</h2>
+        <h3>{{ album.artist }}</h3>
+        <button type="submit">Update</button>
+    
+    <a href="{% url 'list_albums' %}">Cancel</a>
     </div>
-  </form>
+</form>
 </div>
 {% endblock %}
