@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Itunes Music</h1>
+<a href="{% url 'add_album' %}">Add New</a>
+
+{% for album in albums %}
+<h2>{{album.title}}</h2>
+<p>{{album.artist}}</h1>
+    <a href="{% url 'delete_album' album.pk %}">delete</a> 
+    <a href="{% url 'edit_album' album.pk %}">Edit</a>  
+{% endfor %}
+{% endblock %}
