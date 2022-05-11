@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static 
 from albums import views as albums_views
 
 urlpatterns = [
@@ -24,4 +26,4 @@ urlpatterns = [
     path('albums/<int:pk>/delete/', albums_views.delete_album, name='delete_album'),
     path('albums/<int:pk>/edit/', albums_views.edit_album, name='edit_album'),
     path('albums/<int:pk>/detail/', albums_views.album_detail, name='album_detail',)
-]
+] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
