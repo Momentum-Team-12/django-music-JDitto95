@@ -6,10 +6,10 @@
 <div>
 {% for album in albums %}
 <h2>{{album.title}}</h2>
+{% if album.image %}
+<img src="{{album.image.url}}" alt="cover" width='250'>
 <p>{{album.artist}}</h1>
-    {% if album.image %}
-    <img src="{{album.image.url}}" alt="cover">
-    {% endif %}
+{% endif %}
     <a href="{% url 'delete_album' album.pk %}">delete</a> 
     <a href="{% url 'edit_album' album.pk %}">Edit</a>  
 
